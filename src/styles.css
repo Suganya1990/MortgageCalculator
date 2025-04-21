@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    overflow: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.mortage-section{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    border:1px solid pink;
+  
+}
+
+/*forms*/
+
+.mortage-header{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.mortgage-form{
+  
+    display: flex;
+    flex-direction: column;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

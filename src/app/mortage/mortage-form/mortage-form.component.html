@@ -1,0 +1,41 @@
+<section class="mortgage-form-section">
+  <header class="mortgage-header">
+    <h1 class="mortgage-header-text">Mortgage Calculator</h1>
+    <a class="button-clear" href="">Clear All</a>
+  </header>
+
+  <form class="mortgage-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="m_amount">
+        Mortgage Amount
+        <input id="m_amount" type="number" formControlName="m_amount" name="m_amount"required/>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="m_terms">Mortgage Term
+        <input id="m_terms" formControlName="m_terms" type="number" name="m_terms" />
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="m_intRate">Interest Rate
+        <input id="m_intRate" formControlName="m_intRate" type="number" name="m_intRate" />
+      </label>
+    </div>
+  
+    <span>Mortage Type </span>
+    <div >
+  
+        <input id="repayment" type="radio" value="Repayment" name="m_type" formControlName="m_type">
+        <label for="repayment">Repayments</label>
+        </div>
+        <div>
+            <input id="interestOnly" type="radio" value="InterestOnly" name="m_type"  formControlName="m_type">
+            <label for="interestOnly">Interest Only </label>
+        </div>
+  
+    <button  [disabled]="!form.valid" (click)="onSubmit()" type="submit" class="mortgage-submit">Calculate Repayments</button>
+  </form>
+
+</section>
+
+

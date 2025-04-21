@@ -1,0 +1,38 @@
+.mortgage-form-section{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    border:5px solid pink;
+    overflow: none;
+    padding: 1rem;
+
+}
+
+.mortgage-header{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.mortgage-header-text{
+    line-height: 1;
+    font-size: 6vw;
+    margin-bottom: .25rem;
+    color:hsl(202, 55%, 16%);
+}
+.button-clear{
+    text-align: left;
+    font-size: 3vw;
+    color:  hsl(200, 26%, 54%);
+}
+
+.mortgage-form{
+  
+    display: flex;
+    flex-direction: column;
+}
+.form-group>label{
+    display: flex;
+    flex-direction: column;
+}
