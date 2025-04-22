@@ -37,7 +37,7 @@ export class MortageFormComponent implements OnInit {
     this.form.reset() 
   }
 
-  getActiveType(type:'Repayment'| 'InterestOnly'){
+  getActiveType(type:'Repayment'| 'Interest Only'){
 
     this.seletedMType = type; 
 

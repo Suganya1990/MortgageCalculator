@@ -6,44 +6,86 @@
 
   <form class="mortgage-form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="col-md-12 form-group">
-      <label for="amount" class="form-group-label ">
+      <label for="amount" class="form-group-label">
         Mortgage Amount
-        <input class="form-group-input" id="amount" type="number" formControlName="m_amount" name="m_amount" />
-      </label>
-    </div>		
-    <div class="col-md-12 form-group">
-      <label for="terms" class="form-group-label ">Mortgage Term
-        <div class=" col-md-12 form-group-input">
-
-            <input class="form-group-input input-terms" id="terms" formControlName="m_terms" type="number" name="m_terms" />Years
-        </div>
-
+        
+        <input
+          class="form-group-input "
+          id="amount"
+          type="number"
+          formControlName="m_amount"
+          name="m_amount"
+        />
       </label>
     </div>
     <div class="col-md-12 form-group">
-      <label for="intRate" class="form-group-label ">Interest Rate
-        <input class="form-group-input input-icon-percentage" id="intRate" formControlName="m_intRate" type="number" name="m_intRate" />
+      <label for="terms" class="form-group-label"
+        >Mortgage Term
+        <div class="col-md-12 form-group-input form-group-input-m_terms">
+          <input
+            class="form-group-input input-terms"
+            id="terms"
+            formControlName="m_terms"
+            type="number"
+            name="m_terms"
+          />  years
+        </div>
       </label>
     </div>
-  
-    
-    <span class="mortgage-type-label">Mortage Type </span>
-    <div [ngClass]="{'active': this.seletedMType==='Repayment'}"  (click)="getActiveType('Repayment')" class="col-md-12 form-group-radio">
-        <label  for="repayment" class="">
-        <input class="form-group-input" id="repayment" type="radio" value="Repayment" name="m_type" formControlName="m_type">
-        Repayments</label>
-        </div>
-        <div [ngClass]="{'active': this.seletedMType==='InterestOnly'}" (click)="getActiveType('InterestOnly')" class="col-md-12 form-group-radio">
-        <label  for="interestOnly" class="">
-            <input class="form-group-input" id="interestOnly" type="radio" value="InterestOnly" name="m_type"  formControlName="m_type">
-             Interest Only </label>
-             </div>
+    <div class="col-md-12 form-group">
+      <label for="intRate" class="form-group-label"
+        >Interest Rate
+        <input
+          class="form-group-input input-icon-percentage"
+          id="intRate"
+          formControlName="m_intRate"
+          type="number"
+          name="m_intRate"
+        />
+      </label>
+    </div>
 
-  
-    <button [disabled]="!form.valid "  type="submit" class="mortgage-submit">Calculate Repayments</button>
-
+    <div class="form-div-radio">
+      <span class="mortgage-type-label">Mortage Type </span>
+      <div
+        [ngClass]="{ active: this.seletedMType === 'Repayment' }"
+        (click)="getActiveType('Repayment')"
+        class="col-md-12 form-group-radio"
+      >
+        <label for="repayment" class="">
+          <input
+            class="form-group-input"
+            id="repayment"
+            type="radio"
+            value="Repayment"
+            name="m_type"
+            formControlName="m_type"
+          />
+          Repayments</label
+        >
+      </div>
+      <div
+        [ngClass]="{ active: this.seletedMType === 'Interest Only' }"
+        (click)="getActiveType('Interest Only')"
+        class="col-md-12 form-group-radio"
+      >
+        <label for="interestOnly" class="">
+          <input
+            class="form-group-input"
+            id="interestOnly"
+            type="radio"
+            value="Interest Only"
+            name="m_type"
+            formControlName="m_type"
+          />
+          Interest Only
+        </label>
+      </div>
+    </div>
+    <div class="center">
+      <button [disabled]="!form.valid" type="submit" class="mortgage-submit">
+        Calculate {{this.form.controls.m_type.value}}
+      </button>
+    </div>
   </form>
-
 </section>
-
-

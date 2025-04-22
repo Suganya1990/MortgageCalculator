@@ -1,11 +1,10 @@
 .mortgage-form-section{
 
-    min-height: fit-content;
+    height: 100vh;
+    width: 75vw;
     overflow: none;
-    max-width: 100vw;
-    border:1px solid pink;
-    padding: 2rem;
-    vertical-align: center;
+
+    padding: 2rem 1.25rem;
 
 }
 /*Header */
@@ -38,27 +37,31 @@
 
     display: flex;
     flex-direction: column;
-    font-size: .45em;
+    font-size: .6em;
     color:  hsl(200, 26%, 54%);
-    font-weight: bold;
-   
+    font-weight: 500;
+    padding: .5em 0;
 }
 .form-group-input{
 
     border-radius: 4px;
     max-width: 100%;
     border: .25px solid  hsl(200, 26%, 54%);
-    padding-right:  12px; 
+    padding-left:  4px 12px; 
     line-height: 2em;
     outline: none;
 
 }
+.form-div-radio{
+    margin: .25em 0;
+    color:hsl(200, 26%, 54%);
+}
 .form-group-radio{
-    border: .25px solid hsl(61, 70%, 52%);
+    border: .25px solid hsl(200, 26%, 54%);
     accent-color:hsl(61, 70%, 52%) ;
     margin: .5rem 0 ;
     border-radius: 5px;
-    font-size:.75em;
+    font-size:.70em;
     color:hsl(202, 55%, 16%);
     font-weight: bold;
     align-items: center;
@@ -69,14 +72,42 @@
 .form-group-input{
     vertical-align: middle;
     align-items: center;
- 
-    padding:  0px 4px;
+    padding:  0px 70px;
+    font-weight: bold;
+    height: 40px;
 }
 
 .input-terms{
     outline: none;
-    border: none;
+    border: transparent;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-icon-currency{
+    background: url("../../../../images/iconCalculator.svg") no-repeat scroll 7px 7px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    background-position: left center;
+    background-position-x: 5%;
+    border:1px solid pink;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+.input-icon-percentage{
+    background: url("../../../../images/percent.png") no-repeat scroll ;
+    background-size: 16px 16px;
+    background-position: right center;
+    background-position-x: 95%;
     
+}
+.form-group-input-m_terms{
+    background-color: hsl(203, 41%, 72%, .25);
+    padding: 0;
+    font-size: 12px;
+}
+.mortgage-type-label{
+    font-size:.75em;
 }
 .form-group-radio>label{
     vertical-align: middle;
@@ -85,9 +116,14 @@
 .active{
     background-color: hsl(61, 70%, 52%, .25);
     border: 1px solid  hsl(61, 70%, 52%, .25);
-    border-radius: 0;
-}
 
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 /* button */
 .mortgage-submit{
@@ -100,6 +136,8 @@
     margin: 1rem auto;
     font-size: 3vw;
     font-weight: bold;
+    align-items: center;
+    justify-self: center;
   
  }
 /*remove arrows in input fied */
