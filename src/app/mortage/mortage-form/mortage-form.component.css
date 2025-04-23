@@ -147,3 +147,33 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+input[type='radio'] {
+
+    width:8px;
+    height: 8px;
+    border-radius: 80%;
+    outline: none;
+    border: 3px solid gray;
+    margin: 6px;
+}
+
+input[type='radio']:before {
+    content: '';
+    display: block;
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+
+
+    
+    background-color:  hsl(61, 70%, 52%) ;
+    
+}
+
+input[type="radio"]:checked {
+
+    background-color:  hsl(61, 70%, 52%) ;
+}
