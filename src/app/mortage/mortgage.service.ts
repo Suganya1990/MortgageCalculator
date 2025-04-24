@@ -16,7 +16,7 @@ export class MortgageService {
 
   constructor() { }
 
-  updateMortgage(m!:Mortgage){
+  updateMortgage(m:Mortgage){
     
     let monthlyPayment = 0
     let interestPayment = 0

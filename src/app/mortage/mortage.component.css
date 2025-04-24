@@ -1,0 +1,14 @@
+.container{
+    container-type: inline-size;
+    border:1px solid pink;
+}
+.container2{
+    border: 1px solid purple;
+    width: 320px;
+}
+
+@container (min-width: 320px){
+    .container{
+        display: none;
+    }
+}
