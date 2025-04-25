@@ -1,26 +1,30 @@
 .container{
 
     overflow: none;
-    
-  
+    height: 100%;
     padding:1em 2em; 
     background-color: hsl(202, 55%, 16%);
-    border-top-right-radius:20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+
 }
 
 .results-header{
     
-    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
     
 }
 .results-header-text{
-    font-size:20px;
-    color: white;
-    font-weight: 500;
+    line-height: 1;
+    font-size:4vw;
     letter-spacing: 1.5px;
-    height: 50px;
+    font-weight: 500;
+    margin-bottom: .25rem;
+    color:white
 }
 .results-info{
     /* border:5px solid blue;  */
@@ -61,4 +65,23 @@
 }
 .results-payment{
     /* border: 5px solid blue; */
+}
+
+@media only screen and (min-width: 600px) 
+{
+    .container{
+
+        overflow: none;
+    
+        height: 100%;
+
+        background-color: hsl(202, 55%, 16%);
+        border-top-right-radius:20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 60px;
+    }
+    
+    .results-header-text{
+        font-size: 26px;
+    }
 }
