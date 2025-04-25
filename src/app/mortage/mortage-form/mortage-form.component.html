@@ -23,12 +23,12 @@
         >Mortgage Term
         <div class=" form-group-input form-group-input-m_terms">
           <input
-            class="form-group-input input-terms"
+            class="form-group-input input-term"
             id="terms"
             formControlName="m_terms"
             type="number"
             name="m_terms"
-          />  years
+          /> years
         </div>
       </label>
     </div>
@@ -45,16 +45,16 @@
       </label>
     </div>
 
-    <div class="form-div-radio">
+    <div class=" form-group ">
       <span class="mortgage-type-label">Mortage Type </span>
       <div
         [ngClass]="{ active: this.seletedMType === 'Repayment' }"
         (click)="getActiveType('Repayment')"
-        class="col-md-12 form-group-radio"
+        class="form-group-radio"
       >
         <label for="repayment" class="">
           <input
-            class="form-group-input"
+            class=" form-group-input"
             id="repayment"
             type="radio"
             value="Repayment"
@@ -67,7 +67,7 @@
       <div
         [ngClass]="{ active: this.seletedMType === 'Interest Only' }"
         (click)="getActiveType('Interest Only')"
-        class="col-md-12 form-group-radio"
+        class="form-group form-group-radio"
       >
         <label for="interestOnly" class="">
           <input
@@ -82,7 +82,7 @@
         </label>
       </div>
     </div>
-    <div class="center">
+    <div class="form-group submit-container">
       <button [disabled]="!form.valid" type="submit" class="mortgage-submit">
         Calculate {{this.form.controls.m_type.value}}
       </button>

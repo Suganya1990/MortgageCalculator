@@ -1,14 +1,13 @@
+
 .container{
-    container-type: inline-size;
-    border:1px solid pink;
-}
-.container2{
-    border: 1px solid purple;
-    width: 320px;
+
+    border-radius: 10px;
+
 }
 
-@container (min-width: 320px){
+@media only screen and (min-width: 600px) {
     .container{
-        display: none;
+        display: flex;
+
     }
 }

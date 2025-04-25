@@ -3,6 +3,7 @@
     padding: 0;
     overflow: none;
     font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 body{
