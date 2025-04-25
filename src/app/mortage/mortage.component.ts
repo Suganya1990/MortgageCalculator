@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component, OnInit } from '@angular/core';
 import { MortageFormComponent } from './mortage-form/mortage-form.component';
 import { MortgageResultsComponent } from './mortgage-results/mortgage-results.component';
 
@@ -9,6 +9,17 @@ import { MortgageResultsComponent } from './mortgage-results/mortgage-results.co
   templateUrl: './mortage.component.html',
   styleUrl: './mortage.component.css'
 })
-export class MortageComponent {
+export class MortageComponent implements OnInit{
+  constructor(){
+    this.showWorkInPrgoressMessage();
+  }
+  ngOnInit(): void {
+    
+  }
+  showWorkInPrgoressMessage () {
+    afterNextRender(() => {
+      alert("This is still a work in progress");
+    });
+}
 
 }
