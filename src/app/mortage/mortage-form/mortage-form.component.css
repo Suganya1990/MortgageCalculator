@@ -83,18 +83,19 @@
 
 }
 .input-icon-currency{
-    background: url("../../../../images/iconCalculator.svg") no-repeat scroll 7px 7px;
+    
     padding-left: 30px;
     padding-bottom: 15px;
     background-position: left center;
     background-position-x: 5%;
-    border:1px solid pink;
+
+    width: fit-content;
     align-items: center;
     width: fit-content;
     height: fit-content;
 }
 .input-icon-percentage{
-    background: url("../../../../images/percent.png") no-repeat scroll ;
+    background: url("../../../../src/assets/images/iconPercentage.svg") no-repeat scroll ;
     background-size: 16px 16px;
     background-position: right center;
     background-position-x: 95%;
@@ -187,6 +188,9 @@ input[type="radio"]:checked {
 
 @media only screen and (min-width: 600px) 
 {
+    .header-text{
+        font-size: 26px;
+    }
     
     .mortgage-form{
         display: grid;

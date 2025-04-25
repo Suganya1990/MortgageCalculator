@@ -6,11 +6,12 @@
 
   <form class="mortgage-form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class=" form-group">
+      
       <label for="amount" class="form-group-label">
         Mortgage Amount
         
         <input
-          class="form-group-input "
+          class=" form-group-input "
           id="amount"
           type="number"
           formControlName="m_amount"
@@ -84,7 +85,7 @@
     </div>
     <div class="form-group submit-container">
       <button [disabled]="!form.valid" type="submit" class="mortgage-submit">
-        Calculate {{this.form.controls.m_type.value}}
+        <img src="../../../assets/images/iconCalculator.svg" alt="">Calculate {{this.form.controls.m_type.value}}
       </button>
     </div>
   </form>
