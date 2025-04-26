@@ -17,18 +17,20 @@
 }
 .header-text{
     line-height: 1;
-    font-size:4vw;
-    letter-spacing: 1.5px;
+    font-size:20px;
+    font:700;
     font-weight: 500;
     margin-bottom: .25rem;
-    color:hsl(202, 55%, 16%);
+    color: hsl(202, 55%, 16%);
 }
 .button-clear{
     text-align: left;
     font-size: .75em;
-    color:  hsl(200, 26%, 54%);
+    color: hsl(200, 26%, 54%);
 }
 
+
+/*form */
 
 .form-group{
     /* border: 4px solid pink; */
@@ -39,17 +41,17 @@
 
     display: flex;
     flex-direction: column;
-    font-size: .6em;
-    color:  hsl(200, 26%, 54%);
+    font: 600;
+    font-size: 14px;
+    color:hsl(200, 26%, 54%);
     font-weight: 500;
     padding: .5em 0;
 }
-.form-group-input{
 
+/*input container */
+.input-group-container{
     border-radius: 4px;
-    
     border: 1px solid  hsl(200, 26%, 54%);
-   
     line-height: 2em;
     outline: none;
     vertical-align: middle;
@@ -57,8 +59,85 @@
     padding:  0px 12px;
     font-weight: bold;
     height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group-container-amount{
+    background-color: hsl(203, 41%, 72%, .25);
+    padding-left: 20px;
+    padding-right: 0;
+    height: 100%;
+    outline: none;
+ 
+    
+}
+
+.input-group-container-terms{
+    background-color: hsl(203, 41%, 72%, .25);
+    padding: 0;
+    height: 100%;
+    font-size: 12px;
+    outline: none;
+    padding-left: 0px;
+    padding-right: 20px;
+    
+}
+.input-group-container-rate{
+    background-color: hsl(203, 41%, 72%, .25);
+    padding: 0;
+    height: 100%;
+    font-size: 12px;
+    outline: none;
+    padding-left: 00px;
+    padding-right: 20px;
+}
+
+
+.input{
+        border-radius: 4px;
+        border: 1px solid  hsl(200, 26%, 54%);
+        line-height: 2em;
+        outline: none;
+        vertical-align: middle;
+        align-items: center;
+        padding:  0px 12px;
+        font-weight: bold;
+        height: 40px;
+     
+}
+
+.input-amount{
+    outline: none;
+    width: 85%;
+    border: none;
+    padding-left: 12px;
+    position: relative;
+    display:block;
+    float: right;
+    margin-top: auto;
 
 }
+
+.input-term{
+    outline: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    width: 80%;
+    border: none;
+    margin-right: 6px;
+}
+.input-rate{
+    outline: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    width: 85%;
+    border: none;
+    margin-right: 6px;
+}
+
+
 
 
 .form-group-radio{
@@ -72,44 +151,17 @@
     align-items: center;
     padding: .35rem;
     vertical-align: middle;
-
 }
-
-.input-term{
-    outline: none;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    width: 65%;
-    border: none;
-    margin-right: 6px;
-
-}
-.input-icon-currency{
+img{
     
-    padding-left: 30px;
-    padding-bottom: 15px;
-    background-position: left center;
-    background-position-x: 5%;
-
-    width: fit-content;
     align-items: center;
-    width: fit-content;
-    height: fit-content;
+
+    height:20px;
+    width: 20px;
 }
-.input-icon-percentage{
-    background: url("../../../../src/assets/images/iconPercentage.svg") no-repeat scroll ;
-    background-size: 16px 16px;
-    background-position: right center;
-    background-position-x: 95%;
-    
-}
-.form-group-input-m_terms{
-    background-color: hsl(203, 41%, 72%, .25);
-    padding: 0;
-    height: 100%;
-    font-size: 12px;
-    outline: none;
-}
+
+
+
 .mortgage-type-label{
     font-size:.75em;
 }
@@ -122,11 +174,11 @@
     border: 1px solid  hsl(61, 70%, 52%, .25);
 
 }
-.center{
+.submit-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: .75em 0em;
 }
 
 /* button */
@@ -140,7 +192,7 @@
     margin: 1rem auto;
     font-size: 20px;
     font-weight: bold;
-margin: 0 auto;
+    margin: 0 auto;
     max-width: fit-content;
   
  }
@@ -191,9 +243,8 @@ input[type="radio"]:checked {
 @media only screen and (min-width:  768px) 
 {
     .container{
-        margin: 0 auto;
-    
-        display: flex;
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
     margin: 0 auto;
     justify-content: center;

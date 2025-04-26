@@ -1,5 +1,6 @@
 .container{
 
+    overflow: none;
 
     padding:1em 2em; 
     background-color: hsl(202, 55%, 16%);
@@ -30,6 +31,7 @@
     max-width: 700px;
     color:hsl(200, 26%, 54%);
     font-weight: 500;
+    font-size: 3.5vw;
 }
 
 .results-container{
@@ -41,13 +43,13 @@
     justify-content: center;
     border-radius: 8px;
     border-top: 6px solid  hsl(61, 70%, 52%);
-    margin: 1.5em 0 ;
-    padding: 1em 1em 0 1em;
-    
+    padding: .5em 1em;
+    margin: .75em 0;
 }
 
 .results-title{
     color:hsl(202, 86%, 94%, 0.75);
+  
 }
 
 .results-monthly{
@@ -59,7 +61,7 @@
 }
 .results-container-totalAmount{
     border-top: 1px solid hsl(202, 86%, 94%, 0.75);
-    padding-top: 2rem;
+
     /* border:5px solid blue;  */
 }
 .results-payment{
@@ -81,5 +83,12 @@
     
     .results-header-text{
         font-size: 26px;
+    }
+    .results-info{
+        /* border:5px solid blue;  */
+        max-width: 700px;
+        color:hsl(200, 26%, 54%);
+        font-weight: 500;
+        font-size: 18px;
     }
 }
