@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators} from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MortgageService } from '../mortgage.service';
+import { Mortgage } from '../mortgage.module';
 @Component({
   selector: 'app-mortage-form',
   standalone: true,
@@ -16,12 +18,12 @@ export class MortageFormComponent implements OnInit {
     m_amount: new FormControl(this.checkSpecialCharacters.bind(this),  [Validators.required, Validators.min(1)]),
     m_terms: new FormControl(null, [Validators.required, Validators.min(1)] ),
     m_intRate: new FormControl(null, [Validators.required, Validators.min(1)]),
-    m_type: new FormControl( null, [Validators.required])
+    m_type: new FormControl( 'Interest Only', [Validators.required])
   })
 
 
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private ms: MortgageService){
 
   }
 
@@ -30,7 +32,11 @@ export class MortageFormComponent implements OnInit {
   
   }
   onSubmit(){
-    alert("Form Submit has been")
+    if(this.form.valid){
+      this.ms.updateMortgage({ amount: Number(this.form.value.m_amount), term:Number(this.form.value.m_terms), rate: Number(this.form.value.m_intRate), type:"Repayment"});
+    }
+    if (this.form.invalid)
+      console.log("Invalid")
   
   }
   resetForm(){

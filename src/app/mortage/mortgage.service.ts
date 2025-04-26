@@ -17,11 +17,13 @@ export class MortgageService {
   constructor() { }
 
   updateMortgage(m:Mortgage){
+    console.log("Inside the Service file")
+    console.log(m)
     
     let monthlyPayment = 0
     let interestPayment = 0
     let totalLaonAmount = 0
-    this.mortgage = {m.amount, m.termm, m.rate, monthlyPayment, interestPayment, totalLaonAmount}
+    // this.mortgage = {m.amount, m.termm, m.rate, monthlyPayment, interestPayment, totalLaonAmount}
     
   }
   calculateMortgage(){

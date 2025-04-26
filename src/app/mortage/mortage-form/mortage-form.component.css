@@ -238,7 +238,9 @@ input[type="radio"]:checked {
 
     background-color:  hsl(61, 70%, 52%) ;
 }
-
+button:disabled{
+    opacity: 0.3;
+  }
 
 @media only screen and (min-width:  768px) 
 {
