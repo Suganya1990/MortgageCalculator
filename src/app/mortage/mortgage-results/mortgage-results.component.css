@@ -1,7 +1,6 @@
 .container{
 
-    overflow: none;
-    height: 100%;
+
     padding:1em 2em; 
     background-color: hsl(202, 55%, 16%);
     display: flex;
