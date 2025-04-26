@@ -8,7 +8,7 @@
     flex-direction: column;
     margin: 0 auto;
     justify-content: center;
-
+    /* border:3px solid salmon; */
 }
 
 .results-header{
@@ -67,14 +67,13 @@
     /* border: 5px solid blue; */
 }
 
-@media only screen and (min-width: 600px) 
+@media only screen and (min-width: 768px) 
 {
     .container{
 
         overflow: none;
-    
         height: 100%;
-
+        max-width: 500px;
         background-color: hsl(202, 55%, 16%);
         border-top-right-radius:20px;
         border-bottom-right-radius: 20px;

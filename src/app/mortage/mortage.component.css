@@ -1,15 +1,14 @@
 
 .container{
-
+    /* border:3px solid salmon; */
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-
-
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
     .container{
+        /* border:3px solid salmon; */
         display: flex;
         height: 50vh;
     }

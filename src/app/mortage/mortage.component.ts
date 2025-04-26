@@ -17,9 +17,9 @@ export class MortageComponent implements OnInit{
     
   }
   showWorkInPrgoressMessage () {
-    afterNextRender(() => {
-      alert("This is still a work in progress");
-    });
+    // afterNextRender(() => {
+    //   alert("This is still a work in progress");
+    // });
 }
 
 }
