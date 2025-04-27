@@ -106,6 +106,7 @@
         padding:  0px 12px;
         font-weight: bold;
         height: 40px;
+        cursor: pointer;
      
 }
 
@@ -241,6 +242,14 @@ input[type='radio'] {
     border: 1px solid hsl(61, 70%, 52%);
     
 }
+.error{ 
+    border-bottom: 3px solid #C64231;
+    background-color:#C64231;
+    color:white;
+    outline:  non;
+    border: 1px solid #C64231;
+    
+}
     
     /*
 input[type='radio']:before {
@@ -263,7 +272,10 @@ input[type="radio"]:checked {
 button:disabled{
     opacity: 0.3;
   } 
-
+.errorMessage{
+    font-size: 12px;
+    color:#C64231
+}
 @media only screen and (min-width:  768px) 
 {
     .container{

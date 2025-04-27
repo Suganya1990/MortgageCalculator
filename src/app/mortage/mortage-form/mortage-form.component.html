@@ -9,7 +9,8 @@
       
       <label for="amount" class="form-group-label">
         Mortgage Amount
-        <div class=" input-group-container  input-group-container-amount ">
+        <div  [ngClass]="{'error': form.controls.m_amount.invalid && (form.controls.m_amount.dirty || form.controls.m_amount.touched)}"
+           class=" input-group-container input-group-container-amount ">
           <span>&#8364;</span>
         <input
           class=" input  input-amount "
@@ -18,15 +19,20 @@
           formControlName="m_amount"
           name="m_amount"
           value="m_amount | currency : ' ' : 'symbol' : '1.0-0'"
-        
+
         />
-        </div>
+      </div>
       </label>
+      @if(form.controls.m_amount.invalid && (form.controls.m_amount.dirty || form.controls.m_amount.touched)){
+
+        <div  [ngClass]="{'errorMessage': form.controls.m_amount.invalid && (form.controls.m_amount.dirty || form.controls.m_amount.touched)}"> {{ this.getErrorMessage(this.form.controls.m_amount)}}</div>
+      }
     </div>
     <div class="form-group">
       <label for="terms" class="form-group-label"
         >Mortgage Term
-        <div class=" input-group-container  input-group-container-terms">
+        <div    [ngClass]="{'error': form.controls.m_terms.invalid && (form.controls.m_terms.dirty || form.controls.m_terms.touched)}"
+        class="input-group-container  input-group-container-terms">
           <input
             class="input input-term"
             id="terms"
@@ -36,10 +42,15 @@
           /> years
         </div>
       </label>
+      @if(form.controls.m_terms.invalid && (form.controls.m_terms.dirty || form.controls.m_terms.touched)){
+
+        <div  [ngClass]="{'errorMessage': form.controls.m_terms.invalid && (form.controls.m_terms.dirty || form.controls.m_terms.touched)}">{{ this.getErrorMessage(this.form.controls.m_terms)}}</div>
+      }
     </div>
     <div class=" form-group">
       <label for="intRate" class="form-group-label">Interest Rate
-        <div class=" input-group-container  input-group-container-rate">
+        <div   [ngClass]="{'error': form.controls.m_intRate.invalid && (form.controls.m_intRate.dirty || form.controls.m_intRate.touched)}"
+          class="input-group-container  input-group-container-rate">
         <input
           class="input input-rate"
           id="intRate"
@@ -50,6 +61,10 @@
         <span>%</span>
         </div>
       </label>
+      @if(form.controls.m_intRate.invalid && (form.controls.m_intRate.dirty || form.controls.m_intRate.touched)){
+
+        <div  [ngClass]="{'errorMessage': form.controls.m_intRate.invalid && (form.controls.m_intRate.dirty || form.controls.m_intRate.touched)}"> {{ this.getErrorMessage(this.form.controls.m_intRate)}}</div>
+      }
     </div>
 
     <div class=" form-group ">

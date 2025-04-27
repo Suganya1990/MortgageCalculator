@@ -14,8 +14,9 @@ import { Mortgage } from '../mortgage.module';
 })
 export class MortageFormComponent implements OnInit {
   seletedMType: String ='';
+  
   form = new FormGroup({
-    m_amount: new FormControl(null,  {validators:[checkNaN]}),
+    m_amount: new FormControl(null,  {validators:[Validators.required, Validators.min(1), checkNaN]}),
     m_terms: new FormControl( null, {validators:[Validators.required, Validators.min(1), checkNaN ]}),
     m_intRate: new FormControl(null, [Validators.required, Validators.min(1), checkNaN]),
     m_type: new FormControl( null, [Validators.required])
@@ -62,6 +63,11 @@ export class MortageFormComponent implements OnInit {
   }
 
   getErrorMessage(fc: FormControl){
+    if(fc.errors != null && fc.errors['required']== true)
+      return "This field is required"
+    else 
+      return 
+
   }
 
   disableSubmit():boolean{
