@@ -15,9 +15,9 @@ import { Mortgage } from '../mortgage.module';
 export class MortageFormComponent implements OnInit {
   seletedMType: String ='';
   form = new FormGroup({
-    m_amount: new FormControl("100000",  [Validators.required, Validators.min(1)]),
-    m_terms: new FormControl("10", [Validators.required, Validators.min(1)] ),
-    m_intRate: new FormControl("5", [Validators.required, Validators.min(1)]),
+    m_amount: new FormControl( [Validators.required, Validators.min(1)]),
+    m_terms: new FormControl( [Validators.required, Validators.min(1)] ),
+    m_intRate: new FormControl([Validators.required, Validators.min(1)]),
     m_type: new FormControl( null, [Validators.required])
   })
 
