@@ -33,7 +33,9 @@ export class MortageFormComponent implements OnInit {
   }
   onSubmit(){
     if(this.form.valid){
-      this.ms.updateMortgage({ amount: Number(this.form.value.m_amount), term:Number(this.form.value.m_terms), rate: Number(this.form.value.m_intRate), type:"Repayment"});
+      this.ms.updateMortgage({ amount: Number(this.form.value.m_amount), term:Number(this.form.value.m_terms), rate: Number(this.form.value.m_intRate), type:String(this.form.value.m_type)});
+    console.log(this.form.value.m_type)
+    console.log(String((this.form.value.m_type)))
     }
     if (this.form.invalid)
       console.log("Invalid")

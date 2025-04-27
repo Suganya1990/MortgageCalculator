@@ -5,5 +5,5 @@ import { Interface } from "readline"
     amount: Number, 
     term: Number,
     rate: Number, 
-    type: null | 'Repayment' | 'Interest' ,
+    type: String | null|  "Repayment" | "Interest" ,
   }  
