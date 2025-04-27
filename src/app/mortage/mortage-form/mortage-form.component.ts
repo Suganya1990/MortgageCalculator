@@ -63,10 +63,12 @@ export class MortageFormComponent implements OnInit {
   }
 
   getErrorMessage(fc: FormControl){
+    if(fc.errors!=null && fc.errors['checkSpecialCharacters'] == true)
+      return "No special characters "
     if(fc.errors != null && fc.errors['required']== true)
       return "This field is required"
     else 
-      return 
+      return ""
 
   }
 
