@@ -112,13 +112,14 @@
 .input-amount{
     outline: none;
     width: 85%;
-    border: none;
+    border:none;
     padding-left: 12px;
     position: relative;
     display:block;
     float: right;
     margin-top: auto;
-
+   border-top-left-radius: 1px;
+   border-bottom-left-radius: 1px;
 }
 
 .input-term{
@@ -219,7 +220,27 @@ input[type='radio'] {
     margin: 6px;
 
 }
+.input-group-container:hover{
+    background-color:hsl(61, 70%, 52%);
+    color:hsl(202, 55%, 16%);
+    outline:  hsl(61, 70%, 52%);
+    border: 1px solid hsl(61, 70%, 52%);
 
+}
+.input-group-container:input:focus{
+    background-color:hsl(61, 70%, 52%);
+    color:hsl(202, 55%, 16%);
+    outline:  hsl(61, 70%, 52%);
+    border: 1px solid hsl(61, 70%, 52%);
+   
+}
+.input-group-containerinput:active{
+    background-color:hsl(61, 70%, 52%);
+    color:hsl(202, 55%, 16%);
+    outline:  hsl(61, 70%, 52%);
+    border: 1px solid hsl(61, 70%, 52%);
+    
+}
     
     /*
 input[type='radio']:before {
@@ -238,9 +259,10 @@ input[type="radio"]:checked {
 
     background-color:  hsl(61, 70%, 52%) ;
 }
+    */
 button:disabled{
     opacity: 0.3;
-  } */
+  } 
 
 @media only screen and (min-width:  768px) 
 {

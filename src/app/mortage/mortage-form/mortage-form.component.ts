@@ -1,6 +1,6 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MortgageService } from '../mortgage.service';
 import { Mortgage } from '../mortgage.module';
@@ -15,9 +15,9 @@ import { Mortgage } from '../mortgage.module';
 export class MortageFormComponent implements OnInit {
   seletedMType: String ='';
   form = new FormGroup({
-    m_amount: new FormControl( [Validators.required, Validators.min(1)]),
-    m_terms: new FormControl( [Validators.required, Validators.min(1)] ),
-    m_intRate: new FormControl([Validators.required, Validators.min(1)]),
+    m_amount: new FormControl(null,  {validators:[checkNaN]}),
+    m_terms: new FormControl( null, {validators:[Validators.required, Validators.min(1), checkNaN ]}),
+    m_intRate: new FormControl(null, [Validators.required, Validators.min(1), checkNaN]),
     m_type: new FormControl( null, [Validators.required])
   })
 
@@ -51,9 +51,9 @@ export class MortageFormComponent implements OnInit {
   }
   checkSpecialCharacters(value: string): boolean {
     let valid = true;
-    if (value && value.length > 0) {
+    if (value && value.length > 0 && value !="NaN") {
       for (let i = 0; i < value.length; i++) {
-        if (value.charAt(i).match(/^[^a-zA-Z0-9 ]/) !== null) {
+        if (value.charAt(i).match(/^[^0-9 ]/) !== null) {
           valid = false;
         }
       }
@@ -62,5 +62,23 @@ export class MortageFormComponent implements OnInit {
   }
 
   getErrorMessage(fc: FormControl){
+  }
+
+  disableSubmit():boolean{
+
+    let disabled = true;
+    if(this.form.invalid)
+      disabled= true;
+    else if (this.form.valid)
+      disabled=false ;
+    return disabled
+  }
+}
+const checkNaN: ValidatorFn = () => {
+  return (control: AbstractControl) : ValidationErrors | null => {
+    if(control.touched ||!control.value || !(Number.isNaN(control.value))) {
+      return { invalid: true };
+    }
+    return null;
   }
 }

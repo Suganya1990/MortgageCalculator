@@ -92,7 +92,7 @@
     </label>
     </div>
     <div class="form-group submit-container">
-      <button [disabled]="!form.valid" type="submit" class="mortgage-submit">
+      <button [disabled]="disableSubmit() " type="submit" class="mortgage-submit">
         <img src="../../../assets/images/iconCalculator.svg" alt="">Calculate Repayment
       </button>
     </div>
