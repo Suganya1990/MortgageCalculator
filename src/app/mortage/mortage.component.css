@@ -5,9 +5,9 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 668px) {
     .container{
-     
+    width: 800px;
         display: flex;
        
     }
