@@ -12,5 +12,6 @@ body{
    justify-content: center;
    margin: auto;
   background:#E7F4FC;
-
+  min-height: 100vh;
+  max-height: fit-content
 }
