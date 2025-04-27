@@ -16,9 +16,9 @@ export class MortageFormComponent implements OnInit {
   seletedMType: String ='';
   
   form = new FormGroup({
-    m_amount: new FormControl(null,  {validators:[Validators.required, Validators.min(1), checkNaN]}),
-    m_terms: new FormControl( null, {validators:[Validators.required, Validators.min(1), checkNaN ]}),
-    m_intRate: new FormControl(null, [Validators.required, Validators.min(1), checkNaN]),
+    m_amount: new FormControl(null,  {validators:[Validators.required, Validators.min(1), checkNaN, checkSpecialCharacters]}),
+    m_terms: new FormControl( null, {validators:[Validators.required, Validators.min(1), checkNaN, checkSpecialCharacters ]}),
+    m_intRate: new FormControl(null, [Validators.required, Validators.min(1), checkNaN, checkSpecialCharacters]),
     m_type: new FormControl( null, [Validators.required])
   })
 
@@ -63,12 +63,14 @@ export class MortageFormComponent implements OnInit {
   }
 
   getErrorMessage(fc: FormControl){
-    if(fc.errors!=null && fc.errors['checkSpecialCharacters'] == true)
-      return "No special characters "
-    if(fc.errors != null && fc.errors['required']== true)
-      return "This field is required"
-    else 
-      return ""
+    if(fc.errors!=null){
+      if(fc.errors['checkSpecialCharacters']== true)
+        {console.log("checking special char")
+        return "No special characters "}
+      else if (fc.errors['required']== true)
+        return "This field is required"
+    }
+      return
 
   }
 
@@ -90,3 +92,17 @@ const checkNaN: ValidatorFn = () => {
     return null;
   }
 }
+
+const checkSpecialCharacters: ValidatorFn =()=> {
+  
+  return (control:AbstractControl):ValidationErrors | null =>{
+    let value = control.value
+   if (value && value.length > 0 && value !="NaN") {
+    for (let i = 0; i < value.length; i++) {
+      if (value.charAt(i).match(/^[^0-9 ]/) !== null) {
+        return { invalid: true }
+      }
+    }
+  }
+  return null;
+}}

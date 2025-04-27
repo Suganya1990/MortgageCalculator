@@ -36,18 +36,14 @@ export class MortgageService {
     let p = this.mortgage.amount;
     let r = this.mortgage.rate/12;
     let n= this.mortgage.term*12 ;
-    console.log(r)
+
 
     /*Monthly payment  */
     this.mortgage.monthlyPayment = p *( (r*(1+r)**n)/(((1+r)**n)-1))
-    
-    
-    // ((( r*(1+r)^n))/(((1+r)^n)-1))
-    console.log("Calculated Monthly Payment: " + this.mortgage.monthlyPayment)
+
+
     /*(Interest rate % * Loan amount) / 12 = Monthly payment */
-    console.log(this.mortgage.interestPayment = (this.mortgage.rate * this.mortgage.amount)/12)
-    console.log( (this.mortgage.rate * this.mortgage.amount)/12)
-    console.log("Calculated Interest Payment: " + this.mortgage.interestPayment)
+    this.mortgage.interestPayment = (this.mortgage.rate * this.mortgage.amount)/12
      /* Total Repayment */
     this.mortgage.totalRepayment = this.mortgage.monthlyPayment*12*this.mortgage.term
   }
