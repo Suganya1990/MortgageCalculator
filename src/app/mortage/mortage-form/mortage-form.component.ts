@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators} from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -7,7 +7,7 @@ import { Mortgage } from '../mortgage.module';
 @Component({
   selector: 'app-mortage-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule],
+  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule, CurrencyPipe] ,
   templateUrl: './mortage-form.component.html',
   styleUrl: './mortage-form.component.css'
   
@@ -15,10 +15,10 @@ import { Mortgage } from '../mortgage.module';
 export class MortageFormComponent implements OnInit {
   seletedMType: String ='';
   form = new FormGroup({
-    m_amount: new FormControl(this.checkSpecialCharacters.bind(this),  [Validators.required, Validators.min(1)]),
-    m_terms: new FormControl(null, [Validators.required, Validators.min(1)] ),
-    m_intRate: new FormControl(null, [Validators.required, Validators.min(1)]),
-    m_type: new FormControl(  [Validators.required])
+    m_amount: new FormControl("100000",  [Validators.required, Validators.min(1)]),
+    m_terms: new FormControl("10", [Validators.required, Validators.min(1)] ),
+    m_intRate: new FormControl("5", [Validators.required, Validators.min(1)]),
+    m_type: new FormControl( null, [Validators.required])
   })
 
 
@@ -32,10 +32,9 @@ export class MortageFormComponent implements OnInit {
   
   }
   onSubmit(){
+    let m : Mortgage = { amount: Number(this.form.value.m_amount), term:Number(this.form.value.m_terms), rate: Number(this.form.value.m_intRate)/100, type:String(this.form.value.m_type), monthlyPayment: 0, interestPayment: 0, totalRepayment:0}
     if(this.form.valid){
-      this.ms.updateMortgage({ amount: Number(this.form.value.m_amount), term:Number(this.form.value.m_terms), rate: Number(this.form.value.m_intRate), type:String(this.form.value.m_type)});
-    console.log(this.form.value.m_type)
-    console.log(String((this.form.value.m_type)))
+      this.ms.updateMortgage( m);
     }
     if (this.form.invalid)
       console.log("Invalid")

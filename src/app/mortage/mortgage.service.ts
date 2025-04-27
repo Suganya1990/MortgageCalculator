@@ -6,32 +6,49 @@ import { Subject } from 'rxjs/internal/Subject';
   providedIn: 'root'
 })
 export class MortgageService {
-  mortgage= {
-    intialLoanAmount: 0, 
-    term:0,
-    rate:0,
-    monthlyPayment:0,
-    interestPayment:0,
-    totalLaonAmount: 0,
-  };
-  private mortgageCalcualteRequested = new Subject<string>();
+  mortgage: Mortgage= {
+    amount:0,
+    term:1,
+    rate: 1, 
+    type:null,
+    monthlyPayment: 0,
+    interestPayment: 0,
+    totalRepayment:0, 
+  
+  }
+
+  private mortgageCalcualteRequested = new Subject<Mortgage>();
   mortgageCalculateRequestStream = this.mortgageCalcualteRequested.asObservable();
 
-  constructor() { }
+  constructor() {
+ 
+   }
 
   updateMortgage(m:Mortgage){
-    console.log("Inside the Service file")
-    console.log(m)
+
+    this.mortgage = m;
+    this.calculateMortgage()
+    this.mortgageCalcualteRequested.next(this.mortgage)
     
-    let monthlyPayment = 0
-    let interestPayment = 0
-    let totalLaonAmount = 0
-    // this.mortgage = {m.amount, m.termm, m.rate, monthlyPayment, interestPayment, totalLaonAmount}
-    this.mortgageCalcualteRequested.next("Hello")
   }
   calculateMortgage(){
-  }
+    console.log(this.mortgage)
+    let p = this.mortgage.amount;
+    let r = this.mortgage.rate/12;
+    let n= this.mortgage.term*12 ;
+    console.log(r)
 
-  calculateInterest(){
+    /*Monthly payment  */
+    this.mortgage.monthlyPayment = p *( (r*(1+r)**n)/(((1+r)**n)-1))
+    
+    
+    // ((( r*(1+r)^n))/(((1+r)^n)-1))
+    console.log("Calculated Monthly Payment: " + this.mortgage.monthlyPayment)
+    /*(Interest rate % * Loan amount) / 12 = Monthly payment */
+    console.log(this.mortgage.interestPayment = (this.mortgage.rate * this.mortgage.amount)/12)
+    console.log( (this.mortgage.rate * this.mortgage.amount)/12)
+    console.log("Calculated Interest Payment: " + this.mortgage.interestPayment)
+     /* Total Repayment */
+    this.mortgage.totalRepayment = this.mortgage.monthlyPayment*12*this.mortgage.term
   }
 }

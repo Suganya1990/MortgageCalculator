@@ -11,16 +11,27 @@
 
    <div class="results-container">
     <div class="results-payment">
-        <p class="results-title">Your monthly repayments</p>
-        <h2 class="results-monthly">
-            1,797.74
-        </h2>
+      
+       
+            @if(this.m.type =="Repayment"){
+                <p class="results-title">Your monthly repayments</p>
+                <h2 class="results-monthly">
+                {{this.m.monthlyPayment | currency : 'EUR' : 'symbol' : '1.0-0'}}
+            </h2>
+            }
+            @else if(this.m.type == "Interest Only"){
+                <p class="results-title">Your interest repayments</p>
+                <h2 class="results-monthly">
+                {{this.m.interestPayment| currency : 'EUR' : 'symbol' : '1.0-0'}}
+            </h2>
+            }
+       
     </div>
     <br>
     <div class="results-container-totalAmount">
         <p class="results-title">Total you'll repay over the term</p>
         <h5 class="results-totalAmount">
-            539,322.94
+          {{this.m.totalRepayment | currency : 'EUR' : 'symbol' : '1.0-0'}}
 
         </h5>
     </div>
