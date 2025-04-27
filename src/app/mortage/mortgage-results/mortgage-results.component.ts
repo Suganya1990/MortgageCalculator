@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MortgageService } from '../mortgage.service';
 
 @Component({
   selector: 'app-mortgage-results',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './mortgage-results.component.css'
 })
 export class MortgageResultsComponent {
+  isResults: Boolean = false
+  constructor(private ms:MortgageService){
+    ms.mortgageCalculateRequestStream.subscribe(request =>{
+      this.isResults = true;
+    })
+  }
 
 }

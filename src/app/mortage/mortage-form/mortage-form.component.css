@@ -195,7 +195,7 @@ img{
     font-weight: bold;
     margin: 0 auto;
     max-width: fit-content;
-  
+  cursor: pointer;
  }
 /*remove arrows in input fied */
 /* Chrome, Safari, Edge, Opera */
@@ -205,20 +205,23 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
+Firefox
+ /* input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 input[type='radio'] {
-
+    
     width:8px;
     height: 8px;
     border-radius: 80%;
     outline: none;
     border: 3px solid gray;
     margin: 6px;
+
 }
 
+    
+    /*
 input[type='radio']:before {
     content: '';
     display: block;
@@ -237,7 +240,7 @@ input[type="radio"]:checked {
 }
 button:disabled{
     opacity: 0.3;
-  }
+  } */
 
 @media only screen and (min-width:  768px) 
 {

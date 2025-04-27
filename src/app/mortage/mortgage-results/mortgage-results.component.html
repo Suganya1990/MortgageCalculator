@@ -1,6 +1,6 @@
 <section class="container">
-
-   <header class="header-container">
+    @if(isResults)
+{   <header class="header-container">
     <h1 class="results-header-text">Your Results</h1>
    </header>
    <div class="results-info-div">
@@ -25,4 +25,20 @@
         </h5>
     </div>
    </div>
+}
+@else if (!isResults){
+
+    <div>
+        <img src="../../../assets/images/illustration-empty.svg" alt="">
+    </div>
+    <header class="header-container">
+        <h1 class="results-header-text"> Results shown here</h1>
+    </header>
+    <div class="results-info-div">
+        <p class="results-info">
+           Complete the form and click "calculate repayments" to see what your monthly repayments would be.
+        </p>
+       </div>
+}
+
 </section>

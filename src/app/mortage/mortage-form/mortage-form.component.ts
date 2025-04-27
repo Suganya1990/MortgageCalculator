@@ -18,7 +18,7 @@ export class MortageFormComponent implements OnInit {
     m_amount: new FormControl(this.checkSpecialCharacters.bind(this),  [Validators.required, Validators.min(1)]),
     m_terms: new FormControl(null, [Validators.required, Validators.min(1)] ),
     m_intRate: new FormControl(null, [Validators.required, Validators.min(1)]),
-    m_type: new FormControl( 'Interest Only', [Validators.required])
+    m_type: new FormControl(  [Validators.required])
   })
 
 

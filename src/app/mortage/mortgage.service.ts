@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Mortgage } from './mortgage.module';
+import { Subject } from 'rxjs/internal/Subject';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class MortgageService {
     interestPayment:0,
     totalLaonAmount: 0,
   };
+  private mortgageCalcualteRequested = new Subject<string>();
+  mortgageCalculateRequestStream = this.mortgageCalcualteRequested.asObservable();
 
   constructor() { }
 
@@ -24,14 +27,11 @@ export class MortgageService {
     let interestPayment = 0
     let totalLaonAmount = 0
     // this.mortgage = {m.amount, m.termm, m.rate, monthlyPayment, interestPayment, totalLaonAmount}
-    
+    this.mortgageCalcualteRequested.next("Hello")
   }
   calculateMortgage(){
-    
-
   }
 
   calculateInterest(){
-    
   }
 }

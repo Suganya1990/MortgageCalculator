@@ -52,12 +52,13 @@
 
     <div class=" form-group ">
       <span class="mortgage-type-label">Mortage Type </span>
+      <label for="repayment" class="">
       <div
         [ngClass]="{ active: this.seletedMType === 'Repayment' }"
         (click)="getActiveType('Repayment')"
         class="form-group-radio"
       >
-        <label for="repayment" class="">
+
           <input
             class=" input"
             id="repayment"
@@ -66,15 +67,15 @@
             name="m_type"
             formControlName="m_type"
           />
-          Repayments</label
-        >
-      </div>
+          Repayments
+        </div>
+      </label>
+      <label for="interestOnly" class="">
       <div
         [ngClass]="{ active: this.seletedMType === 'Interest Only' }"
         (click)="getActiveType('Interest Only')"
-        class="form-group form-group-radio"
-      >
-        <label for="interestOnly" class="">
+        class="form-group form-group-radio">
+      
           <input
             class="input"
             id="interestOnly"
@@ -84,12 +85,13 @@
             formControlName="m_type"
           />
           Interest Only
-        </label>
+      
       </div>
+    </label>
     </div>
     <div class="form-group submit-container">
       <button [disabled]="!form.valid" type="submit" class="mortgage-submit">
-        <img src="../../../assets/images/iconCalculator.svg" alt="">Calculate {{this.form.controls.m_type.value}}
+        <img src="../../../assets/images/iconCalculator.svg" alt="">Calculate Repayment
       </button>
     </div>
   </form>
