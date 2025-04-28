@@ -160,8 +160,8 @@ img{
     
     align-items: center;
 
-    height:20px;
-    width: 20px;
+    height:12px;
+    width: 12px;
 }
 
 
@@ -194,11 +194,12 @@ img{
     width: fit-content;
     padding: .5rem 1.5rem;
     margin: 1rem auto;
-    font-size: 20px;
+    font-size: 12px;
     font-weight: bold;
     margin: 0 auto;
     max-width: fit-content;
   cursor: pointer;
+  align-items: center;
  }
 /*remove arrows in input fied */
 /* Chrome, Safari, Edge, Opera */
@@ -252,23 +253,23 @@ input[type='radio'] {
     
 }
     
-    /*
+/*
 input[type='radio']:before {
     content: '';
     display: block;
     width:10px;
     height: 10px;
     border-radius: 50%;
-}
-
-input[type="radio"]:checked:before {
-    background-color:  hsl(61, 70%, 52%) ;    
-}
-
-input[type="radio"]:checked {
-
-    background-color:  hsl(61, 70%, 52%) ;
-}
+    }
+    
+    input[type="radio"]:checked:before {
+        background-color:  hsl(61, 70%, 52%) ;    
+        }
+        
+        input[type="radio"]:checked {
+            
+            background-color:  hsl(61, 70%, 52%) ;
+            }
     */
 button:disabled{
     opacity: 0.3;
