@@ -102,6 +102,10 @@
           Interest Only
       
       </div>
+      @if(form.controls.m_type.invalid && (form.controls.m_type.dirty || form.controls.m_type.touched)){
+
+        <div  [ngClass]="{'errorMessage': form.controls.m_type.invalid && (form.controls.m_type.dirty || form.controls.m_type.touched)}"> {{ this.getErrorMessage(this.form.controls.m_type)}}</div>
+      }
     </label>
     </div>
     <div class="form-group submit-container">
