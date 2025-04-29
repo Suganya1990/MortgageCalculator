@@ -32,7 +32,7 @@
     max-width: 700px;
     color:hsl(200, 26%, 54%);
     font-weight: 500;
-    font-size: 3.5vw;
+    font-size: 16px;
 }
 
 .results-container{
@@ -106,7 +106,7 @@ text-align: center;
     .results-header-text{
         font-size: 26px;
     }
-    .results-info{
+    .results-empty-info{
         /* border:5px solid blue;  */
         max-width: 700px;
         color:hsl(200, 26%, 54%);
