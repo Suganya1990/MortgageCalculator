@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" role="mortgage-calculation-results">
     @if(isResults)
 {   <header class="header-container">
     <h1 class="results-header-text">Your Results</h1>
@@ -38,7 +38,7 @@
    </div>
 }
 @else if (!isResults){
-    <div class="results-empty-container">
+    <div class="results-empty-container" role="mortgage-results-info">
 
         <div>
             <img src="../../../assets/images/illustration-empty.svg" alt="">
