@@ -1,10 +1,10 @@
-<section class="container"  >
-  <header class="header-container" >
+<section class="container"  role="">
+  <header class="header-container" role="heading">
     <h1 class="header-text">Mortgage Calculator</h1>
-    <a class="button-clear" (click)="resetForm()" href="">Clear All</a>
+    <a class="button-clear" (click)="resetForm()" href="" role="button">Clear All</a>
   </header>
 
-  <form class="mortgage-form" [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <form class="mortgage-form" [formGroup]="form" (ngSubmit)="onSubmit()" role="form">
     <div class=" form-group">
       
       <label for="amount" class="form-group-label">
@@ -87,7 +87,7 @@
             value="Repayment"
             name="m_type"
             formControlName="m_type"
-            role="input"
+            role="checkbox"
           />
           Repayments
         </div>
@@ -105,7 +105,7 @@
             value="Interest Only"
             name="m_type"
             formControlName="m_type"
-            role="input"
+            role="checkbox"
           />
           Interest Only
       
